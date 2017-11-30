@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>A list of Items</title>
+</head>
+
+<body>
+	<header>
+		<h1>Store Items</h1>
+	</header>
+
+
+
+<div th:each="item: ${items}">
+ <p th:text="'Item:' + ${item.name}">
+ <a th:href="${item.url}">pic of diapers</a>
+ </p>
+    </div>
+
+</body>
+</html>
