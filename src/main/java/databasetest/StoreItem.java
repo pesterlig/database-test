@@ -26,38 +26,40 @@ public class StoreItem {
 	private String description;
 	
 	private double price;
-	private String url;
+	private String size;
+	private String brand;
+	private String upc;
+	private String imgUrlSm;
+	private String imgUrlMed;
+	private String imgUrlLg;
 	
+	public StoreItem(Long id, String uriItemId, String name, String description, double price, String size,
+			String brand, String upc, String imgUrlSm, String imgUrlMed, String imgUrlLg) {
+		this.id = id;
+		this.uriItemId = uriItemId;
+		this.name = name;
+		this.description = description;
+		this.price = price;
+		this.size = size;
+		this.brand = brand;
+		this.upc = upc;
+		this.imgUrlSm = imgUrlSm;
+		this.imgUrlMed = imgUrlMed;
+		this.imgUrlLg = imgUrlLg;
+	}
 
-
-	//overloaded constructor necessary for JPA 
 	protected StoreItem() {
+	}
+	
+		
+	public Long getId() {
+		return id;
 	}
 
 	public void setId(Long id) {
 		this.id = id;
 	}
 
-	//constructor
-	public StoreItem(Long id, String uriItemId, String name, String description, double price, String url) {
-		this.id = id;
-		this.uriItemId = uriItemId;
-		this.name = name;
-		this.description = description;
-		this.price = price;
-		this.url = url;
-		
-	}
-
-
-	@Override
-    public String toString() {
-        return String.format(
-                "StoreItem[id=%d, name='%s', description='%s', price='%s', url='%s',]",
-                id, name, description, price, url);
-    }
-
-	
 	public String getUriItemId() {
 		return uriItemId;
 	}
@@ -66,11 +68,6 @@ public class StoreItem {
 		this.uriItemId = uriItemId;
 	}
 
-	public Long getId() {
-		return id;
-	}
-
-	
 	public String getName() {
 		return name;
 	}
@@ -95,12 +92,60 @@ public class StoreItem {
 		this.price = price;
 	}
 
-	public String getUrl() {
-		return url;
+	public String getSize() {
+		return size;
 	}
 
-	public void setUrl(String url) {
-		this.url = url;
+	public void setSize(String size) {
+		this.size = size;
 	}
 
-}
+	public String getBrand() {
+		return brand;
+	}
+
+	public void setBrand(String brand) {
+		this.brand = brand;
+	}
+
+	public String getUpc() {
+		return upc;
+	}
+
+	public void setUpc(String upc) {
+		this.upc = upc;
+	}
+
+	public String getImgUrlSm() {
+		return imgUrlSm;
+	}
+
+	public void setImgUrlSm(String imgUrlSm) {
+		this.imgUrlSm = imgUrlSm;
+	}
+
+	public String getImgUrlMed() {
+		return imgUrlMed;
+	}
+
+	public void setImgUrlMed(String imgUrlMed) {
+		this.imgUrlMed = imgUrlMed;
+	}
+
+	public String getImgUrlLg() {
+		return imgUrlLg;
+	}
+
+	public void setImgUrlLg(String imgUrlLg) {
+		this.imgUrlLg = imgUrlLg;
+	}
+
+
+	@Override
+    public String toString() {
+        return String.format(
+                "StoreItem[id=%d, name='%s', description='%s', price='%s',]",
+                id, name, description, price);
+    }
+
+} //end of class

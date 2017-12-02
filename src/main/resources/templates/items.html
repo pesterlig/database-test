@@ -14,8 +14,8 @@
 
 
 <div th:each="item: ${items}">
- <p th:text="'Item:' + ${item.name}">
- <a th:href="${item.url}">pic of diapers</a>
+ <p th:text="'Item:' + ${item.name} + 'Description:' + ${item.description}">
+ <a th:href="${item.imgUrlSm}">pic of diapers</a>
  </p>
     </div>
 
