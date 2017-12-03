@@ -53,6 +53,10 @@ public class DatabasePopulator implements CommandLineRunner {
 					String item = uriItemId.toString();
 					System.out.println(uriItemId);
 					genericItem.setUriItemId(item);
+					
+					String tagId = (String) jsonObject.get("groceryAppTagId");
+					System.out.println(tagId);
+					genericItem.setItemTagId(tagId);
 
 					String name = (String) jsonObject.get("name");
 					System.out.println(name);
@@ -101,6 +105,12 @@ public class DatabasePopulator implements CommandLineRunner {
 						double salePrice = ((Number) jsonObject.get("msrp")).doubleValue();
 						System.out.println(salePrice);
 						genericItem.setPrice(salePrice);
+					}
+					else if(jsonObject.containsKey("groceryAppPrice")) {
+						double salePrice = ((Number) jsonObject.get("groceryAppPrice")).doubleValue();
+						System.out.println(salePrice);
+						genericItem.setPrice(salePrice);	
+						
 					}}
 					catch (Exception ex) {
 						throw new IllegalStateException("Failed to execute ApplicationRunner", ex);

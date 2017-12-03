@@ -20,6 +20,7 @@ public class StoreItem {
 	@GeneratedValue
 	private Long id;
 	private String uriItemId;
+	private String itemTagId;
 	private String name;
 	
 	@Lob
@@ -33,10 +34,11 @@ public class StoreItem {
 	private String imgUrlMed;
 	private String imgUrlLg;
 	
-	public StoreItem(Long id, String uriItemId, String name, String description, double price, String size,
+	public StoreItem(Long id, String uriItemId, String itemTagId, String name, String description, double price, String size,
 			String brand, String upc, String imgUrlSm, String imgUrlMed, String imgUrlLg) {
 		this.id = id;
 		this.uriItemId = uriItemId;
+		this.itemTagId = itemTagId;
 		this.name = name;
 		this.description = description;
 		this.price = price;
@@ -66,6 +68,14 @@ public class StoreItem {
 
 	public void setUriItemId(String uriItemId) {
 		this.uriItemId = uriItemId;
+	}
+		
+	public String getItemTagId() {
+		return itemTagId;
+	}
+
+	public void setItemTagId(String itemTagId) {
+		this.itemTagId = itemTagId;
 	}
 
 	public String getName() {
